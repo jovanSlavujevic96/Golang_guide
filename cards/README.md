@@ -37,4 +37,15 @@ Alternative way of making same variable form up (initialziation statement)
 ~~~
 card := "Ace of Spades"
 ~~~
-We use this : colon sign at very first usage of variable -> when it is created/defined
+- We use this : colon sign at very first usage of variable -> when it is created/defined
+- If we what to reassing the value for already create variable we can do it like this:
+~~~
+card = "Five of Diamonds"
+~~~
+
+Function with return types must have it mentioned after parenthesesis like this:
+~~~
+func helloString() string {
+    return "hello"
+}
+~~~

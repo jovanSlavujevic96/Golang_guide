@@ -4,11 +4,12 @@ import "fmt"
 
 func main() {
 	// initialization statement
-	// var card string = "Ace of Spades"
-	card := "Ace of Spades" // same line from above
-
-	// reassing value to card var
-	card = "Five of Diamongs"
+	card := newCard()
 
 	fmt.Println(card)
+}
+
+// when we want to return some value within the function we mention it right after the paranethesesis
+func newCard() string {
+	return "Five of Diamonds"
 }
