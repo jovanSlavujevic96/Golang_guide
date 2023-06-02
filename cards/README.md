@@ -49,3 +49,16 @@ func helloString() string {
     return "hello"
 }
 ~~~
+
+## Go structures for collections
+
+* They can be devided in two groups:
+    1. Array - Fixed length list of things
+    2. Slice - An array that can grow or shrink
+
+Slices and arrays both must be defined as array of data type, so it must have identical data type for items (elements)
+
+To declare a variable which is slice of strings:
+~~~
+cards := []string{}
+~~~
