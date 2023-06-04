@@ -3,9 +3,12 @@ package main
 func main() {
 	cards := newDeck()
 
-	// to capture both of the values
-	hand, remainingDeck := deal(cards, 5)
+	// fmt.Println(cards.toString())
+	cards.saveToFile("my_cards")
 
-	hand.print()
-	remainingDeck.print()
+	// to capture both of the values
+	// hand, remainingDeck := deal(cards, 5)
+
+	// hand.print()
+	// remainingDeck.print()
 }
