@@ -82,3 +82,27 @@ func (d deck) print() {
 }
 ```
 This kind of approach basically means: any variable of type "deck" now gets access to the "print" method
+
+## Slice range syntax
+
+```
+fruits := []string{"apple", "banana", "grape", "orange"}
+----------------------------------------------------------
+fruits[startIndexIncludoing : upToNotIncluding]
+fruits[0:2] -> ["apple", "banana"]
+=>
+fruits[:2] -> ["apple", "banana"] # start from beginning always
+=>
+fruits[2:] -> ["grape", "orange"] # starts from 2nd element to the end
+----------------------------------------------------------
+```
+
+## Multiple return values
+```
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}
+
+deck, remainingDeck := deal(cards, 5)
+```
+It returns cards sub slices within two slice variables

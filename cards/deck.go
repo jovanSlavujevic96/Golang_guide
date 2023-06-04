@@ -28,3 +28,9 @@ func (d deck) print() {
 		fmt.Println(i, card)
 	}
 }
+
+// we return two values -> both of deck type values
+// returns two sub slices
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}
