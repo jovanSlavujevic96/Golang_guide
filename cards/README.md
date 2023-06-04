@@ -62,3 +62,15 @@ To declare a variable which is slice of strings:
 ~~~
 cards := []string{}
 ~~~
+
+<i> Go is not Object Oriented programming languange <br/>
+So there is no idea about classes !!!
+But there is OO approach within golang </i>
+
+## Go OOP approach
+
+- To extend basic (primitive type) we can create our own custom extension (type)
+```
+type deck []string
+```
+This line basically means: create new type deck which is equal/or has all properties and possiblities like the slice of string
