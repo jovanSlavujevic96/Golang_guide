@@ -69,8 +69,16 @@ But there is OO approach within golang </i>
 
 ## Go OOP approach
 
-- To extend basic (primitive type) we can create our own custom extension (type)
+To extend basic (primitive type) we can create our own custom extension (type)
 ```
 type deck []string
 ```
 This line basically means: create new type deck which is equal/or has all properties and possiblities like the slice of string
+
+Receiver func is a func which can be defined like this:
+```
+func (d deck) print() {
+    ...
+}
+```
+This kind of approach basically means: any variable of type "deck" now gets access to the "print" method
