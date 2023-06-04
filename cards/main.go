@@ -1,16 +1,17 @@
 package main
 
-import "fmt"
-
 func main() {
 	cards := newDeck()
-	cards.saveToFile("my_cards")
+	// cards.saveToFile("my_cards")
 
-	cardsA := newDeckFromFile("my_cards") // no error (file exists)
-	fmt.Println(cardsA.toString())
+	cards.shuffle()
+	cards.print()
 
-	cardsB := newDeckFromFile("my_") // error occures
-	fmt.Println(cardsB.toString())
+	// cardsA := newDeckFromFile("my_cards") // no error (file exists)
+	// fmt.Println(cardsA.toString())
+
+	// cardsB := newDeckFromFile("my_") // error occures
+	// fmt.Println(cardsB.toString())
 
 	// to capture both of the values
 	// hand, remainingDeck := deal(cards, 5)
