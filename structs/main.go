@@ -19,8 +19,8 @@ func (p person) print() {
 	fmt.Printf("%+v", p)
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
 
 func main() {
@@ -42,7 +42,8 @@ func main() {
 		},
 	}
 
-	jim.updateName("")
-	jim.updateName("jimmy") // this is not going to update the value
+	jimPointer := &jim             // get the address of the object
+	jimPointer.updateName("jimmy") // this will update the value
+	// jim.updateName("jimmy") // this is not going to update the value
 	jim.print()
 }
