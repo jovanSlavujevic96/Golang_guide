@@ -48,3 +48,8 @@ func main() {
 	jim.updateName("jimmy")
 	jim.print()
 }
+
+// so called "gotcha"
+func updateSlice(s []string) {
+	s[0] = "Bye" // it changes direct slice -> doesn't make a copy
+}
