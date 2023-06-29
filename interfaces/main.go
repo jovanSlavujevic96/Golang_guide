@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+// interfaces are not generic types
+// interfaces are 'implicit'
+// interfaces are a contract to help us manage types
+// interfaces are tough. Step #1 is understanding how to read them
 type bot interface {
 	getGreeting() string
 }
