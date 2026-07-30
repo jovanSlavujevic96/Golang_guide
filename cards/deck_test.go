@@ -27,11 +27,11 @@ func TestSaveToDeckAndNewDeckTestFromFile(t *testing.T) {
 	deck := newDeck()
 	deck.saveToFile("_decktesting")
 
-	loadedDeck := newDeckFromFile("_deckTesting")
+	loadedDeck := newDeckFromFile("_decktesting")
 
 	if len(loadedDeck) != 16 {
 		t.Errorf("Expected 16 cards in decko, got %v", len(loadedDeck))
 	}
 
-	os.Remove("_deckTesting")
+	os.Remove("_decktesting")
 }
