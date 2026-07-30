@@ -10,6 +10,23 @@ type bot interface {
 	getGreeting() string
 }
 
+/**
+* to whom it may concern...
+* `type bot interface`
+* Our program has a new type called `bot`
+*
+* `getGreeting() string`
+* if you are a type in this program with a
+* function called `getGreeting` and you return a
+* string then you are now an honorary member
+* of type `bot`
+*
+* Now that you're also an honorary member of
+* type `bot`, you can now call this function
+* called `printGreen`
+* `func printGreeting(b bot)`
+**/
+
 type englishBot struct{}
 type spanishBot struct{}
 
