@@ -1,7 +1,3 @@
-// created it with following commands
-// $ go mod init
-// $ go mod init example.com/m
-// $ go mod tidy
-module example.com/m
+module cards
 
-go 1.20
+go 1.26.4
