@@ -22,7 +22,7 @@
 
 * An <b>import</b> keyword does importing of mentioned packages, which basically means import all codes, functions and other from this package so I can use it within mine
 * <b>fmt</b> package is Standard lib
-* <a href="hhtps://golang.org/pkg/">here</a> we can find a list of all packages included in standard library which we can import and use. Every package has a separate package with doc explanation of usable functions.
+* <a href="https://golang.org/pkg/">here</a> we can find a list of all packages included in standard library which we can import and use. Every package has a separate package with doc explanation of usable functions.
 
 ## Func
 Func is short for functions and they are simillar to other programming languages
