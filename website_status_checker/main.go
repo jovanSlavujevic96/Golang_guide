@@ -41,8 +41,12 @@ func main() {
 	// }
 
 	// we want to achieve repeating routines
-	for { // infinite loop
-		go checkLink(<-c, c)
+	//
+	// wait for the channel to return some value
+	// after it does it, return it to variable `l`
+	// then run the body of the for loop
+	for l := range c { // infinite loop
+		go checkLink(l, c)
 	}
 }
 
