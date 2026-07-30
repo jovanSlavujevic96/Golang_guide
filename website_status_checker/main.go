@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 // ^^^main routine created when we launched our program
@@ -46,7 +47,12 @@ func main() {
 	// after it does it, return it to variable `l`
 	// then run the body of the for loop
 	for l := range c { // infinite loop
-		go checkLink(l, c)
+		// make a function literal
+		go func(link string) {
+			// add 5 seconds timeout to next status check iteration
+			time.Sleep(5 * time.Second)
+			checkLink(link, c)
+		}(l)
 	}
 }
 
