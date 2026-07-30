@@ -15,6 +15,8 @@ func main() {
 		"http://amazon.com",
 	}
 
+	c := make(chan string)
+
 	for _, link := range links {
 
 		// going sequentially (waiting status one-by-one) is much more slower
@@ -22,7 +24,7 @@ func main() {
 
 		// going concurrently with go routine
 		// ^^^child routines created by the `go` keyword
-		go checkLink(link)
+		go checkLink(link, c)
 
 		// !concurrency is not parallelism!
 		// scheduler runs one routine until it finished or makse a blocking call (like an HTTP request)
@@ -32,14 +34,20 @@ func main() {
 		// *parallelism* - multiple threads executed at the exact same time.
 		// this requires multiple CPU's.
 	}
+
+	for i := 0; i < len(links); i++ {
+		fmt.Println(<-c)
+	}
 }
 
-func checkLink(link string) {
+func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 	if err != nil {
 		fmt.Println(link, "might be down!")
 		fmt.Print("here's the error:", err)
+		c <- "Might be down I think"
 		return
 	}
 	fmt.Println(link, "is up!")
+	c <- "Yep it's up"
 }
