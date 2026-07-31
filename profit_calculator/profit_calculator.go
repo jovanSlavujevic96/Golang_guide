@@ -5,11 +5,16 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+
+	"github.com/Pallinder/go-randomdata"
 )
 
 func main() {
 	var revenue, expenses, tax_rate float64
 	var e error
+
+	fmt.Println("Welcome to Profit Calculator")
+	fmt.Println("Random phone number: ", randomdata.PhoneNumber())
 
 	revenue, e = getUserInfo("Revenue: ")
 	if e != nil {
