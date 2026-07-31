@@ -18,16 +18,38 @@ type botPlus interface {
 }
 
 // interface{} type means func receives any kind of value/type for an argument
+// option 1 with switch-case
+// func printSomething(value interface{}) {
+// 	switch value.(type) { // different handling between types
+// 	case int:
+// 		fmt.Println("Integer:", value)
+// 	case float64:
+// 		fmt.Println("Float:", value)
+// 	case string:
+// 		fmt.Println(value)
+// 	default:
+// 		// don't do anything for any other type of value
+// 	}
+// }
+
+// option 2 with extracting type
 func printSomething(value interface{}) {
-	switch value.(type) { // different handling between types
-	case int:
-		fmt.Println("Integer:", value)
-	case float64:
-		fmt.Println("Float:", value)
-	case string:
-		fmt.Println(value)
-	default:
-		// don't do anything for any other type of value
+	intVal, ok := value.(int)
+	if ok {
+		fmt.Println("Integer:", intVal)
+		return
+	}
+
+	floatVal, ok := value.(float64)
+	if ok {
+		fmt.Println("Float:", floatVal)
+		return
+	}
+
+	stringVal, ok := value.(string)
+	if ok {
+		fmt.Println("String:", stringVal)
+		return
 	}
 }
 
