@@ -33,24 +33,29 @@ type botPlus interface {
 // }
 
 // option 2 with extracting type
-func printSomething(value interface{}) {
-	intVal, ok := value.(int)
-	if ok {
-		fmt.Println("Integer:", intVal)
-		return
-	}
+// func printSomething(value interface{}) {
+// 	intVal, ok := value.(int)
+// 	if ok {
+// 		fmt.Println("Integer:", intVal)
+// 		return
+// 	}
 
-	floatVal, ok := value.(float64)
-	if ok {
-		fmt.Println("Float:", floatVal)
-		return
-	}
+// 	floatVal, ok := value.(float64)
+// 	if ok {
+// 		fmt.Println("Float:", floatVal)
+// 		return
+// 	}
 
-	stringVal, ok := value.(string)
-	if ok {
-		fmt.Println("String:", stringVal)
-		return
-	}
+// 	stringVal, ok := value.(string)
+// 	if ok {
+// 		fmt.Println("String:", stringVal)
+// 		return
+// 	}
+// }
+
+// option 3 with generics
+func printSomething[T int | float64 | string /*any*/](value T) {
+	fmt.Println(value)
 }
 
 /**
