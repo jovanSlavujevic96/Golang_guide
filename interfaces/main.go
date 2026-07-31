@@ -10,6 +10,27 @@ type bot interface {
 	getGreeting() string
 }
 
+// embedded interface
+// in order to be an interface struct must implement both `bot` & `botPlus` methods
+type botPlus interface {
+	bot
+	getParting() string
+}
+
+// interface{} type means func receives any kind of value/type for an argument
+func printSomething(value interface{}) {
+	switch value.(type) { // different handling between types
+	case int:
+		fmt.Println("Integer:", value)
+	case float64:
+		fmt.Println("Float:", value)
+	case string:
+		fmt.Println(value)
+	default:
+		// don't do anything for any other type of value
+	}
+}
+
 /**
 * to whom it may concern...
 * `type bot interface`
@@ -34,12 +55,22 @@ func main() {
 	eb := englishBot{}
 	sb := spanishBot{}
 
-	printGreeting(eb)
-	printGreeting(sb)
+	printGreetingAndParting(eb)
+	printGreetingAndParting(sb)
+
 }
 
 func printGreeting(b bot) {
-	fmt.Println(b.getGreeting())
+	printSomething(b.getGreeting())
+}
+
+func printParting(b botPlus) {
+	printSomething(b.getParting())
+}
+
+func printGreetingAndParting(b botPlus) {
+	printGreeting(b)
+	printParting(b)
 }
 
 // func printGreeting(eb englishBot) {
@@ -55,6 +86,14 @@ func (englishBot) getGreeting() string {
 	return "Hello"
 }
 
+func (englishBot) getParting() string {
+	return "Bye"
+}
+
 func (spanishBot) getGreeting() string {
 	return "Hola"
+}
+
+func (spanishBot) getParting() string {
+	return "Adios"
 }
