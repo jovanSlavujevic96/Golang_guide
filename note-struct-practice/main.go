@@ -9,11 +9,13 @@ import (
 func main() {
 	title, content := getNoteData()
 
-	_, err := note.New(title, content)
+	userNote, err := note.New(title, content)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+
+	userNote.Display()
 }
 
 func getNoteData() (string, string) {
