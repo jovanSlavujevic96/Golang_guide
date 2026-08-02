@@ -42,7 +42,7 @@ func (job *TaxIncludedPriceJob) Process() {
 
 	job.TaxIncludedPrices = result
 
-	err := job.IOManager.WriteJSON(job)
+	err := job.IOManager.WriteResult(job)
 	if err != nil {
 		fmt.Println("Writing to JSON failed.")
 		fmt.Println(err)
