@@ -7,9 +7,11 @@ func main() {
 	sum_slice := sumup_slice(numbers)
 
 	sum := sumup(1, 10, 15)
+	anotherSum := sumup(0, numbers...)
 
 	fmt.Println(sum_slice)
 	fmt.Println(sum)
+	fmt.Println(anotherSum)
 }
 
 func sumup_slice(numbers []int) int {
