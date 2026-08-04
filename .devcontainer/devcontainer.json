@@ -25,7 +25,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"golang.go"
+				"golang.go",
+				"humao.rest-client"
 			]
 		}
 	}
